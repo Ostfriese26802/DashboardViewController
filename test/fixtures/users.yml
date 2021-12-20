@@ -3,7 +3,9 @@
 one:
   username: MyString
   password_digest: MyString
+  gruppe: one
 
 two:
   username: MyString
   password_digest: MyString
+  gruppe: two

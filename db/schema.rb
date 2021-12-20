@@ -10,13 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_16_202200) do
+ActiveRecord::Schema.define(version: 2021_12_18_095142) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
+    t.integer "gruppe_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["gruppe_id"], name: "index_users_on_gruppe_id"
   end
 
+  add_foreign_key "users", "gruppes"
 end
