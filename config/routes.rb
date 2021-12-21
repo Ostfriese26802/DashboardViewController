@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :gruppes
   resources :users
   get 'sessions/new'
   get 'sessions/create'
@@ -7,8 +8,7 @@ Rails.application.routes.draw do
   get 'sessions/gem'
   get 'sessions/install'
   get 'sessions/bcrypt'
-  get 'users/new'
-  get 'users/create'
+ 
 
  
   get 'login', to: 'sessions#new'
