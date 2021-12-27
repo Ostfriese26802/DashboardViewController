@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :gruppes
   resources :users
+  resources :start
   get 'sessions/new'
   get 'sessions/create'
   get 'sessions/login'

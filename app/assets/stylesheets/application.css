@@ -14,3 +14,14 @@
  *= require_self
  */
  @import "bootstrap";
+
+
+ #left {
+    width: 25%;
+    float:left;
+ }
+
+ #center {
+     width: 50%;
+     float: left;
+ }
