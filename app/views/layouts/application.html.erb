@@ -11,19 +11,8 @@
   </head>
 
   <body>
-  huhu<div class="container">
-  <div class="row">
-    <div class="col-sm">
-      One of three columns
-    </div>
-    <div class="col-sm">
-      One of three columns
-    </div>
-    <div class="col-sm">
-      One of three columns
-    </div>
-  </div>
-</div>
-    <%= yield %>
+    <main role="main">
+    <%= content_for?(:content) ? yield(:content) : yield %>
+    </main>
   </body>
 </html>
