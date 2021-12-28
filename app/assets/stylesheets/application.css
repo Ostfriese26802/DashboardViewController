@@ -34,3 +34,17 @@
         margin-bottom: 5px;
 }
 
+#content{
+        width: 50%;
+        border: 1px solid #ff0000;
+        position: absolute;
+        left:25%;
+        top: 0px;
+
+}
+
+
+#navbar{
+        text-align:right;
+        width:100%;
+}

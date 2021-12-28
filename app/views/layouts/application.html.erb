@@ -13,7 +13,10 @@
   <body>
 
     <main role="main">
-    <%= content_for?(:content) ? yield(:content) : yield %>
+      <div id="content"> 
+         <%= render template: "layouts/navbar" %>
+        <%= content_for?(:content) ? yield(:content) : yield %>
+      </div>
     </main>
 
   </body>

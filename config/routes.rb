@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :gruppes
   resources :users
   resources :start
+  
   get 'sessions/new'
   get 'sessions/create'
   get 'sessions/login'
@@ -9,7 +10,7 @@ Rails.application.routes.draw do
   get 'sessions/gem'
   get 'sessions/install'
   get 'sessions/bcrypt'
- 
+  get 'sessions/destroy'
 
  
   get 'login', to: 'sessions#new'
