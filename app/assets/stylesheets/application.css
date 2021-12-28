@@ -16,12 +16,21 @@
  @import "bootstrap";
 
 
- #left {
-    width: 25%;
-    float:left;
- }
+ body {
+        background: white;
+        color: black;
+        font-family: sans-serif;
+}
+.login {
+	left: 50%;
+	position: absolute;
+	top: 45%;
+	transform: translate(-50%, -55%);
+	text-align: center;
+}
+.btn-primary {
+        color: white;
+        border-color: white;
+        margin-bottom: 5px;
+}
 
- #center {
-     width: 50%;
-     float: left;
- }

@@ -11,12 +11,10 @@
   </head>
 
   <body>
-  <div id="left">
-    
-  </div>
-  <div id="center">
-    <%= yield %>
-  </div>
-  <div style="clear:both"></div>
+
+    <main role="main">
+    <%= content_for?(:content) ? yield(:content) : yield %>
+    </main>
+
   </body>
 </html>
