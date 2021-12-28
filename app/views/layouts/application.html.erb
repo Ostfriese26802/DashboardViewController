@@ -11,8 +11,10 @@
   </head>
 
   <body>
+
     <main role="main">
     <%= content_for?(:content) ? yield(:content) : yield %>
     </main>
+
   </body>
 </html>

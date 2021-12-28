@@ -15,6 +15,7 @@
  */
  @import "bootstrap";
 
+
  body {
         background: white;
         color: black;
@@ -32,3 +33,4 @@
         border-color: white;
         margin-bottom: 5px;
 }
+
