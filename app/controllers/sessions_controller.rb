@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(username: params[:username])
     if @user && @user.authenticate(params[:password])
        session[:user_id] = @user.id
+       session[:gruppe_id] = @user.gruppe_id
        redirect_to '/start'
     else
        redirect_to '/login'

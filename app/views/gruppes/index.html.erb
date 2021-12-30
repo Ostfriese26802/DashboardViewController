@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Gruppes</h1>
+<h1>Gruppen</h1>
 
 <table>
   <thead>
@@ -14,9 +14,21 @@
     <% @gruppes.each do |gruppe| %>
       <tr>
         <td><%= gruppe.name %></td>
-        <td><%= link_to 'Show', gruppe %></td>
-        <td><%= link_to 'Edit', edit_gruppe_path(gruppe) %></td>
-        <td><%= link_to 'Destroy', gruppe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Anzeigen', gruppe %></td>
+        <td>
+          <% # wenn die id der Gruppe ist ist darf diese nicht gelöscht werden, da es die Admin ID ist.%>
+          <% if gruppe.id != 1 %>
+            <%= link_to 'Bearbeiten', edit_gruppe_path(gruppe) %>
+          <% end %>  
+            </td>
+        <td>
+          <% # Wenn es noch Benutzer unter der Gruppe gibt, kann diese nicht gelöscht werden %>
+          <% if User.where(gruppe_id: gruppe.id).count == 0 %>
+           <% if gruppe.id != 1 %>
+             <%= link_to 'Löschen', gruppe, method: :delete, data: { confirm: 'Sind Sie sicher?' } %>
+           <% end %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +36,4 @@
 
 <br>
 
-<%= link_to 'New Gruppe', new_gruppe_path %>
+<%= link_to 'Neue Gruppe', new_gruppe_path %>

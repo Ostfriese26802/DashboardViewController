@@ -22,9 +22,9 @@
         font-family: sans-serif;
 }
 .login {
-	left: 50%;
+	top: 150px;
 	position: absolute;
-	top: 45%;
+	left: 50%;
 	transform: translate(-50%, -55%);
 	text-align: center;
 }
@@ -47,4 +47,7 @@
 #navbar{
         text-align:right;
         width:100%;
+        height:20px;
 }
+
+

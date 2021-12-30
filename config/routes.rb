@@ -18,5 +18,8 @@ Rails.application.routes.draw do
   get 'welcome', to: 'sessions#welcome'
   get 'logout', to: 'sessions#destroy'
   get 'authorized', to: 'sessions#page_requires_login'
+
+
+  root :to => 'sessions#new'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

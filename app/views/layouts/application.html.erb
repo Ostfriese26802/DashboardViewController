@@ -14,10 +14,13 @@
 
     <main role="main">
       <div id="content"> 
-         <%= render template: "layouts/navbar" %>
-        <%= content_for?(:content) ? yield(:content) : yield %>
+          <% if session[:user_id] != nil %>
+            <%= render template: "layouts/navbar" %>
+          <%end%>
+          <%= content_for?(:content) ? yield(:content) : yield %>
       </div>
     </main>
+    <div style="float:left"></div>
 
   </body>
 </html>

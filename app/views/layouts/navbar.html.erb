@@ -1,4 +1,10 @@
 <div id="navbar">
-    test <%= link_to '<i class="bi bi-pencil"></i>'.html_safe ,:controller => "sessions", :action => "destroy" %>
+    <%= session[:gruppe_id] %>
+
+    <% if session[:gruppe_id] == 1%>
+        <%= link_to '<i class="bi bi-person-fill" style="color:#000000;font-size:20pt" ></i>'.html_safe ,:controller => "users", :action => "index" %>
+        <%= link_to '<i class="bi bi-people-fill" style="color:#000000;font-size:20pt" ></i>'.html_safe ,:controller => "gruppes", :action => "index" %>
+    <% end %>
+    <%= link_to '<i class="bi bi-arrow-up-right-square-fill" style="color:#ff0000;font-size:20pt" ></i>'.html_safe ,:controller => "sessions", :action => "destroy" %>
 </div>
 

@@ -33,7 +33,8 @@
 -->
   <div class="field">
     <%= form.label :gruppe_id %>
-    <%= form.text_field :gruppe_id %>
+     <%= form.collection_select(:gruppe_id,Gruppe.all,:id,:name, :selected => @user.gruppe_id)%> 
+    
   </div>
 
   <div class="actions">
