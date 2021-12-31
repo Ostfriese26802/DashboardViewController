@@ -1,0 +1,41 @@
+<%= form_with(model: computer) do |form| %>
+  <% if computer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(computer.errors.count, "error") %> prohibited this computer from being saved:</h2>
+
+      <ul>
+        <% computer.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :fqdn %>
+    <%= form.text_field :fqdn %>
+  </div>
+
+  <div class="field">
+    <%= form.label :url %>
+    <%= form.text_field :url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gruppe_id %>
+    <% if session[:gruppe_id] == 1%>
+      <%= form.collection_select(:gruppe_id,Gruppe.all,:id,:name, :selected => @computer.gruppe_id)%> 
+    <% else %>
+      <%= form.collection_select(:gruppe_id,Gruppe.all,:id,:name, :selected => session[:gruppe_id])%>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= form.label :standort %>
+    <%= form.text_field :standort %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

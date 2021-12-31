@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_21_065733) do
+ActiveRecord::Schema.define(version: 2021_12_31_085148) do
+
+  create_table "computers", force: :cascade do |t|
+    t.string "fqdn"
+    t.string "url"
+    t.integer "gruppe_id", null: false
+    t.string "standort"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["gruppe_id"], name: "index_computers_on_gruppe_id"
+  end
 
   create_table "gruppes", force: :cascade do |t|
     t.string "name"
@@ -27,5 +37,6 @@ ActiveRecord::Schema.define(version: 2021_12_21_065733) do
     t.index ["gruppe_id"], name: "index_users_on_gruppe_id"
   end
 
+  add_foreign_key "computers", "gruppes"
   add_foreign_key "users", "gruppes"
 end

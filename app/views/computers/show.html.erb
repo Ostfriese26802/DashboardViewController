@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fqdn:</strong>
+  <%= @computer.fqdn %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @computer.url %>
+</p>
+
+<p>
+  <strong>Gruppe:</strong>
+  <%= @computer.gruppe_id %>
+</p>
+
+<p>
+  <strong>Standort:</strong>
+  <%= @computer.standort %>
+</p>
+
+<%= link_to 'Edit', edit_computer_path(@computer) %> |
+<%= link_to 'Back', computers_path %>
