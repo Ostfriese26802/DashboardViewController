@@ -25,7 +25,7 @@ class ComputersController < ApplicationController
 
     respond_to do |format|
       if @computer.save
-        format.html { redirect_to @computer, notice: "Computer was successfully created." }
+        format.html { redirect_to @computer, notice: "Der Computer wurde erstellt." }
         format.json { render :show, status: :created, location: @computer }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class ComputersController < ApplicationController
   def update
     respond_to do |format|
       if @computer.update(computer_params)
-        format.html { redirect_to @computer, notice: "Computer was successfully updated." }
+        format.html { redirect_to @computer, notice: "Computer wurde aktualisiert." }
         format.json { render :show, status: :ok, location: @computer }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -64,6 +64,6 @@ class ComputersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def computer_params
-      params.require(:computer).permit(:fqdn, :url, :gruppe_id, :standort)
+      params.require(:computer).permit(:fqdn, :url, :gruppe_id, :standort, :benutzer)
     end
 end

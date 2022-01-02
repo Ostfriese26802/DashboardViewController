@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Fqdn</th>
+      <th>Benutzer</th>
       <th>Url</th>
       <th>Gruppe</th>
       <th>Standort</th>
@@ -17,6 +18,7 @@
     <% @computers.each do |computer| %>
       <tr>
         <td><%= computer.fqdn %></td>
+         <td><%= computer.benutzer %></td>
         <td><%= computer.url %></td>
         <td><%= Gruppe.find(computer.gruppe_id).name %></td>
         <td><%= computer.standort %></td>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_31_085148) do
+ActiveRecord::Schema.define(version: 2022_01_02_112714) do
 
   create_table "computers", force: :cascade do |t|
     t.string "fqdn"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2021_12_31_085148) do
     t.string "standort"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "benutzer"
     t.index ["gruppe_id"], name: "index_computers_on_gruppe_id"
   end
 
