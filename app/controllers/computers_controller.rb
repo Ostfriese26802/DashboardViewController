@@ -56,6 +56,23 @@ class ComputersController < ApplicationController
     end
   end
 
+
+  # url auf computer hinterlegen
+  def url
+    Net::SSH.start(Computer.find(params[:id]).fqdn, Computer.find(params[:id]).benutzer) do |ssh|
+      output = ssh.exec!("echo '" + Computer.find(params[:id]).url + "' > urldatei.txt")
+      puts  "huhu"
+      puts output
+     
+    end
+    
+   respond_to do |format|
+     format.html { redirect_to computers_url ,notice: 'Url übertragen' }
+     format.json { render :show, status: :ok, location: @computer }
+    end
+  end
+
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_computer

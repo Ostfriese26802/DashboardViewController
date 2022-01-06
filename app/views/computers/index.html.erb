@@ -10,7 +10,7 @@
       <th>Url</th>
       <th>Gruppe</th>
       <th>Standort</th>
-      <th colspan="3"></th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
@@ -25,6 +25,7 @@
         <td><%= link_to 'Anzeigen', computer %></td>
         <td><%= link_to 'Bearbeiten', edit_computer_path(computer) %></td>
         <td><%= link_to 'Löschen', computer, method: :delete, data: { confirm: 'Sind Sie sicher?' } %></td>
+        <td><%= link_to '<i class="bi bi-arrow-bar-up" style="color:#000000;font-size:20pt" ></i>'.html_safe ,:controller => "computers", :action => "url", :id => computer.id %></td>
       </tr>
     <% end %>
   </tbody>

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   resources :computers
+  get 'computers/url/:id', to: 'computers#url'
+
   resources :gruppes
   resources :users
   resources :start
