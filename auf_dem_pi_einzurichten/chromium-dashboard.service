@@ -1,0 +1,10 @@
+[Unit]
+Description=Chromium-Dashboard systemd service.
+
+[Service]
+Type=simple
+User=pi
+ExecStart=/bin/bash /opt/chromium-autostart.sh
+
+[Install]
+WantedBy=multi-user.target
