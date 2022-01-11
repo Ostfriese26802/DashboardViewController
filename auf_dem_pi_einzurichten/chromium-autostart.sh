@@ -1,23 +1,5 @@
 #!/bin/sh
 
-# Dieses Script wird mittels Systemd nach erfolgtem Start des Systems aufgerufen:
-# Dazu die Unit-File "chromium-dashboard.service" unter /etc/systemd/system ablegen
-# anschließend den neuen Service einlesen:
-# Bitte ausfuehren: systemctl daemon-reload
-# Für den Systemstart aktivieren:
-# Bitte ausführen: systemctl enable chromium-dashboard.service
-#
-# Dieses Script "chromium-autostart.sh" muss unter /opt/ abgelegt werden
-# Berechtigung anpassen: chmod +x /opt/chromium-autostart.sh
-#
-# Installiert sein muessen zur Ausfuehrung: unclutter und chromium-browser
-#
-# Ablauf:
-# Zu Beginn wird die aufzurufende URL ausgelesen
-# Der Start von unclutter wird im Autostart hinterlegt um den Mauszeiger zu deaktivieren
-# Der Bildschirmschoner wird deaktiviert und im Autostart hinterlegt
-# Chromium wird im Kioskmodus mit zugehöriger URL aufgerufen
-
 # Variablen
 autostart_config = /etc/xdg/lxsession/LXDE-pi/autostart
 url_file = /home/pi/url  # Pfad zur Datei welche die aufzurufende URL beinhaltet
