@@ -10,6 +10,8 @@
 # Dieses Script "chromium-autostart.sh" muss unter /opt/ abgelegt werden
 # Berechtigung anpassen: chmod +x /opt/chromium-autostart.sh
 #
+# Installiert sein muessen zur Ausfuehrung: unclutter und chromium-browser
+#
 # Ablauf:
 # Zu Beginn wird die aufzurufende URL ausgelesen
 # Es wird unclutter gestartet um den Mauszeiger zu deaktivieren
