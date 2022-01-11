@@ -2,9 +2,9 @@
 
 ## Ablauf/ Funktionsweise
 Es wird ein Systemd-Service installiert, welcher nach erfolgtem Start des Systems läuft.
-Dieser Service startet darauf ein Script, welches folgende Aufgaben abarbeitet:
+Dieser Service startet ein Script, welches folgende Aufgaben abarbeitet:
  - Zu Beginn wird die aufzurufende URL ausgelesen (die aufzurufende URL wird durch DVC konfiguriert)
- - Der Start von unclutter wird im Autostart hinterlegt um den Mauszeiger zu deaktivieren
+ - Der Start von unclutter wird im Autostart hinterlegt, um den Mauszeiger zu deaktivieren
  - Chromium wird im Kioskmodus mit zugehöriger URL aufgerufen
 
 ## Voraussetzung
