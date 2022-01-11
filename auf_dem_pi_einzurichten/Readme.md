@@ -12,17 +12,20 @@ Installiert werden müssen Chromium-browser, sowie unclutter (um den Mauszeiger 
 
 ## Installation/ Einrichtung
 ### Installation Browser und unclutter
+```
 $ sudo apt update
 $ sudo apt install chromium-browser
 $ sudo apt install unclutter
-
+```
 ### Einrichtung Systemd-Service
 Die Datei "chromium-dashboard.service" wird unter /etc/systemd/system abgelegt.
 Anschließend den Deamon neu laden und den Service aktivieren:
+```
 $ systemctl daemon-reload
 $ systemctl enable chromium-dashboard.service
-
+```
 ### Start-Script einrichten
 Das Script "chromium-autostart.sh" wird unter /opt/ abgelegt.
 Damit das Script durch jeden gestartet werden kann, muss noch die Berechtigung angepasst werden:
+```
 $ chmod +x /opt/chromium-autostart.sh
