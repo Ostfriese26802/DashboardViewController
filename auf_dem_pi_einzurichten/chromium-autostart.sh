@@ -14,22 +14,23 @@
 #
 # Ablauf:
 # Zu Beginn wird die aufzurufende URL ausgelesen
-# Es wird unclutter gestartet um den Mauszeiger zu deaktivieren
-# Der Bildschirmschoner wird deaktiviert
+# Der Start von unclutter wird im Autostart hinterlegt um den Mauszeiger zu deaktivieren
+# Der Bildschirmschoner wird deaktiviert und im Autostart hinterlegt
 # Chromium wird im Kioskmodus mit zugehöriger URL aufgerufen
 
 # Variablen
+autostart_config = /etc/xdg/lxsession/LXDE-pi/autostart
 url_file = /home/pi/url  # Pfad zur Datei welche die aufzurufende URL beinhaltet
 url = $(cat $url_file)   # Inhalt der Datei wird eingelesen
 # (!) Die Datei darf nur die URL beinhalten, ggf. mehrere durch Komma getrennt (!)
 
-# Unclutter starten
-@unclutter
+# Unclutter zum Autostart hinzufuegen
+fgrep -q '@unclutter' $autostart_config || echo '@unclutter' >> $autostart_config
 
-# Bildschirmschoner deaktivieren
-@xset s off
-@xset -dpms
-@xset s noblank
+# Bildschirmschoner deaktivieren und dem Autostart hinzufuegen
+fgrep -q '@xset s off' $autostart_config || echo '@xset s off' >> $autostart_config
+fgrep -q '@xset -dpms' $autostart_config || echo '@xset -dpms' >> $autostart_config
+fgrep -q '@xset s noblank' $autostart_config || echo '@xset s noblank' >> $autostart_config
 
 # Chromium im Kiosk-modus starten
-@chromium-browser --kiosk $url
+chromium-browser --kiosk $url
