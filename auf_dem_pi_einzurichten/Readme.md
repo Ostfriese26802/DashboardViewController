@@ -24,8 +24,8 @@ Die Datei *"trigger-mon.path"* muss unter `/etc/systemd/system` abgelegt werden.
 Anschließend den Deamon neu laden und den Service aktivieren:
 ```
 $ systemctl daemon-reload
-$ systemctl enable chromium-dashboard.service
-$ systemctl enable trigger-mon.path
+$ systemctl enable chromium-dashboard.service --now
+$ systemctl enable trigger-mon.path --now
 ```
 ### Scripte einrichten
 Das Script *"chromium-autostart.sh"* wird unter /opt/dvc/ abgelegt.
