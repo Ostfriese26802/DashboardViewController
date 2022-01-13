@@ -2,7 +2,7 @@
 
 # Variablen
 autostart_config = /etc/xdg/lxsession/LXDE-pi/autostart
-url_file = /home/pi/url  # Pfad zur Datei welche die aufzurufende URL beinhaltet
+url_file = /home/pi/dvc/url  # Pfad zur Datei welche die aufzurufende URL beinhaltet
 url = $(cat $url_file)   # Inhalt der Datei wird eingelesen
 # (!) Die Datei darf nur die URL beinhalten, ggf. mehrere durch Komma getrennt (!)
 

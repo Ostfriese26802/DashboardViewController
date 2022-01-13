@@ -1,0 +1,9 @@
+[Unit]
+Description="Monitor the /home/pi/dvc/trigger file for changes"
+
+[Path]
+PathModified=/home/pi/dvc/trigger
+Unit=trigger-mon.service
+
+[Install]
+WantedBy=multi-user.target
