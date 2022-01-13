@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Variablen
-file=/Users/Jannes/projects/tmp/trigger
+file=/home/pi/dvc/trigger
 
 # Pruefung ob Datei vorhanden ist und lesen des Inhalts
 if [ -f $file ]; then
