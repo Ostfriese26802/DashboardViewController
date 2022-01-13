@@ -2,9 +2,9 @@
 
 ## Ablauf/ Funktionsweise
 Es wird ein Systemd-Service installiert, welcher nach erfolgtem Start des Systems läuft.
-Dieser Service startet darauf ein Script, welches folgende Aufgaben abarbeitet:
+Dieser Service startet ein Script, welches folgende Aufgaben abarbeitet:
  - Zu Beginn wird die aufzurufende URL ausgelesen (die aufzurufende URL wird durch DVC konfiguriert)
- - Der Start von unclutter wird im Autostart hinterlegt um den Mauszeiger zu deaktivieren
+ - Der Start von unclutter wird im Autostart hinterlegt, um den Mauszeiger zu deaktivieren
  - Chromium wird im Kioskmodus mit zugehöriger URL aufgerufen
 
 ## Voraussetzung
@@ -26,7 +26,7 @@ $ systemctl daemon-reload
 $ systemctl enable chromium-dashboard.service
 ```
 ### Start-Script einrichten
-Das Script "chromium-autostart.sh" wird unter /opt/dvc/ abgelegt.
+Das Script *"chromium-autostart.sh"* aus diesem Verzeichnis muss unter `/opt/` abgelegt werden.
 Damit das Script durch jeden gestartet werden kann, muss noch die Berechtigung angepasst werden:
 ```
 $ chmod +x /opt/chromium-autostart.sh
