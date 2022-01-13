@@ -1,5 +1,5 @@
 [Unit]
-Description=Chromium-Dashboard systemd service.
+Description="Run Chromium-Autostart Script"
 
 [Service]
 Type=simple

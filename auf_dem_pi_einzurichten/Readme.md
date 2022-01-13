@@ -19,6 +19,7 @@ $ sudo apt install unclutter
 ```
 ### Einrichtung Systemd-Service
 Die Datei *"chromium-dashboard.service"* muss unter `/etc/systemd/system` abgelegt werden.
+Die Datei *"trigger-mon.service"* muss unter `/etc/systemd/system` abgelegt werden.
 Die Datei *"trigger-mon.path"* muss unter `/etc/systemd/system` abgelegt werden.
 Anschließend den Deamon neu laden und den Service aktivieren:
 ```
@@ -26,8 +27,15 @@ $ systemctl daemon-reload
 $ systemctl enable chromium-dashboard.service
 $ systemctl enable trigger-mon.path
 ```
-### Start-Script einrichten
-Das Script "chromium-autostart.sh" wird unter /opt/dvc/ abgelegt.
-Damit das Script durch jeden gestartet werden kann, muss noch die Berechtigung angepasst werden:
+### Scripte einrichten
+Das Script *"chromium-autostart.sh"* wird unter /opt/dvc/ abgelegt.
+Das Script *"trigger.sh"* wird unter /opt/dvc/ abgelegt.
+Damit das Script *"chromium-autostart.sh"* durch jeden gestartet werden kann, muss noch die Berechtigung angepasst werden:
 ```
-$ chmod +x /opt/chromium-autostart.sh
+$ chmod +x /opt/dvc/chromium-autostart.sh
+```
+Das Script *"trigger.sh"* wird nur mit dem User root ausgeführt und entsprechend berechtigt:
+```
+$ chown root:root /opt/dvc/trigger.sh
+$ chmod 700 /opt/dvc/trigger.sh
+```

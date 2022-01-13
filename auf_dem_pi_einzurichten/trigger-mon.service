@@ -1,0 +1,9 @@
+[Unit]
+Description="Run reboot/shutdown trigger script"
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /opt/dvc/trigger.sh
+
+[Install]
+WantedBy=multi-user.target
