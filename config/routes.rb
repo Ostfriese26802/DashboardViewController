@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   resources :computers
+  get 'computers/url/:id', to: 'computers#url'
+  get 'computers/neustart/:id', to: 'computers#neustart'
+  get 'computers/herunterfahren/:id', to: 'computers#herunterfahren'
   resources :gruppes
   resources :users
   resources :start

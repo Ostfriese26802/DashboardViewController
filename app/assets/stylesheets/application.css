@@ -51,3 +51,10 @@
 }
 
 
+ /* mouse over link */
+ a:hover {
+        color:black;
+        text-decoration: none;
+        font-weight: bold;
+        background-color:white;
+      }

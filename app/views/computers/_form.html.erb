@@ -13,12 +13,21 @@
 
   <div class="field">
     <%= form.label :fqdn %>
-    <%= form.text_field :fqdn %>
+    <% if session[:gruppe_id] == 1%>
+      <%= form.text_field :fqdn %>
+    <% else %>
+      <%= form.text_field :fqdn, :readonly => true %>
+    <% end %>
   </div>
 
   <div class="field">
+    
     <%= form.label :benutzer %>
-    <%= form.text_field :benutzer %>
+    <% if session[:gruppe_id] == 1%>
+      <%= form.text_field :benutzer %>
+    <% else %>
+      <%= form.text_field :benutzer, :readonly => true  %>
+    <% end %>
   </div>
 
   <div class="field">

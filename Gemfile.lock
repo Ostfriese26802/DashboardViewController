@@ -65,6 +65,7 @@ GEM
     autoprefixer-rails (10.3.3.0)
       execjs (~> 2)
     bcrypt (3.1.16)
+    bcrypt_pbkdf (1.1.0)
     bindex (0.8.1)
     bootsnap (1.9.3)
       msgpack (~> 1.0)
@@ -86,6 +87,7 @@ GEM
     childprocess (4.1.0)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
+    ed25519 (1.2.4)
     erubi (1.10.0)
     execjs (2.8.1)
     ffi (1.15.4)
@@ -109,6 +111,7 @@ GEM
     mini_mime (1.1.2)
     minitest (5.14.4)
     msgpack (1.4.2)
+    net-ssh (6.1.0)
     nio4r (2.5.8)
     nokogiri (1.12.5-x86_64-darwin)
       racc (~> 1.4)
@@ -214,12 +217,15 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt
+  bcrypt_pbkdf
   bootsnap (>= 1.4.4)
   bootstrap
   byebug
   capybara (>= 3.26)
+  ed25519
   jbuilder (~> 2.7)
   listen (~> 3.3)
+  net-ssh
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.4, >= 6.1.4.1)
