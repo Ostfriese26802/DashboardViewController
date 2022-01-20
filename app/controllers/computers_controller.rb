@@ -76,7 +76,7 @@ class ComputersController < ApplicationController
   def neustart
     
     Net::SSH.start(Computer.find(params[:id]).fqdn, Computer.find(params[:id]).benutzer) do |ssh|
-      output = ssh.exec!("shutdown -r now")
+      output = ssh.exec!("echo 'reboot' > dvc/trigger")
       
       puts output
      
@@ -93,7 +93,7 @@ class ComputersController < ApplicationController
   def herunterfahren
     
     Net::SSH.start(Computer.find(params[:id]).fqdn, Computer.find(params[:id]).benutzer) do |ssh|
-      output = ssh.exec!("shutdown -h now")
+      output = ssh.exec!("echo 'shutdown' > dvc/trigger")
       
       puts output
      
