@@ -36,8 +36,8 @@ $ systemctl enable trigger-mon.path --now
 $ systemctl enable trigger-mon.service --now
 ```
 ### Scripte einrichten
-Das Script *"chromium-autostart.sh"* wird unter /opt/dvc/ abgelegt.  
-Das Script *"trigger.sh"* wird unter /opt/dvc/ abgelegt.  
+Das Script *"chromium-autostart.sh"* wird unter `/opt/dvc/` abgelegt.  
+Das Script *"trigger.sh"* wird unter `/opt/dvc/` abgelegt.  
 Damit das Script *"chromium-autostart.sh"* durch jeden gestartet werden kann, muss noch die Berechtigung angepasst werden:  
 ```
 $ chmod +x /opt/dvc/chromium-autostart.sh
