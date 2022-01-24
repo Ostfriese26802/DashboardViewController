@@ -14,6 +14,13 @@ Das Script prüft ob reboot oder shutdown eingetragen wurden durch das DVC und s
 Installiert werden müssen Chromium-browser, sowie unclutter (um den Mauszeiger zu deaktivieren)
 
 ## Installation/ Einrichtung
+Für die Installation muss der Inhalt des gesamten Verzeichnisses auf den Pi kopiert werden.  
+Anschließend kann innerhalb dieses Verzeichnisses der installer aufgerufen werden.
+```
+$ sudo ./install.sh
+```
+
+### Alternativ kann die Installation händisch durchgeführt werden indem folgende Schritte durchgeführt werden:
 ### Installation Browser und unclutter
 ```
 $ sudo apt update
