@@ -20,7 +20,7 @@ Anschließend kann innerhalb dieses Verzeichnisses der installer aufgerufen werd
 $ sudo ./install.sh
 ```
 
-## Alternativ kann die Installation händisch durchgeführt werden indem folgende Schritte durchgeführt werden:
+## Alternativ kann die Installation händisch durchgeführt werden:
 ### Installation Browser und unclutter
 ```
 $ sudo apt update
