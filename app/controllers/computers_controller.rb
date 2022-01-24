@@ -62,7 +62,8 @@ class ComputersController < ApplicationController
     Net::SSH.start(Computer.find(params[:id]).fqdn, Computer.find(params[:id]).benutzer) do |ssh|
       output = ssh.exec!("echo '" + Computer.find(params[:id]).url + "' > urldatei.txt")
       
-      puts output
+
+     
       
     end
     
@@ -78,15 +79,27 @@ class ComputersController < ApplicationController
     Net::SSH.start(Computer.find(params[:id]).fqdn, Computer.find(params[:id]).benutzer) do |ssh|
       output = ssh.exec!("echo 'reboot' > dvc/trigger")
       
-      puts output
+      # Prüfen ob der Steuerbefehl auch übertragen wurde
+      checkoutput = ssh.exec!("cat dvc/trigger")
+
+
+         
+      if checkoutput.include? "reboot" 
+        respond_to do |format|
+        format.html { redirect_to computers_url ,notice: 'Computer wird neugestartet' }
+        format.json { render :show, status: :ok, location: @computer }
+        end
+      else
+        respond_to do |format|
+          format.html { redirect_to computers_url ,notice: 'Es ist ein Fehler aufgetreten, bitte client prüfen' }
+          format.json { render :show, status: :ok, location: @computer }
+          end
+      end
      
      
     end
     
-    respond_to do |format|
-     format.html { redirect_to computers_url ,notice: 'Computer wird neugestartet' }
-     format.json { render :show, status: :ok, location: @computer }
-    end
+   
   end
 
   # computer herunterfhren
@@ -95,15 +108,25 @@ class ComputersController < ApplicationController
     Net::SSH.start(Computer.find(params[:id]).fqdn, Computer.find(params[:id]).benutzer) do |ssh|
       output = ssh.exec!("echo 'shutdown' > dvc/trigger")
       
-      puts output
+       # Prüfen ob der Steuerbefehl auch übertragen wurde
+       checkoutput = ssh.exec!("cat dvc/trigger")
+      
+       if checkoutput.include? "shutdown" 
+        respond_to do |format|
+        format.html { redirect_to computers_url ,notice: 'Computer wird heruntergefahren' }
+        format.json { render :show, status: :ok, location: @computer }
+        end
+      else
+        respond_to do |format|
+          format.html { redirect_to computers_url ,notice: 'Es ist ein Fehler aufgetreten, bitte client prüfen' }
+          format.json { render :show, status: :ok, location: @computer }
+          end
+      end
      
      
     end
     
-    respond_to do |format|
-     format.html { redirect_to computers_url ,notice: 'Computer wird neugestartet' }
-     format.json { render :show, status: :ok, location: @computer }
-    end
+   
   end
   
   private
