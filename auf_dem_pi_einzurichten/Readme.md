@@ -20,14 +20,14 @@ Anschließend kann innerhalb dieses Verzeichnisses der installer aufgerufen werd
 $ sudo ./install.sh
 ```
 
-### Alternativ kann die Installation händisch durchgeführt werden indem folgende Schritte durchgeführt werden:
-#### Installation Browser und unclutter
+## Alternativ kann die Installation händisch durchgeführt werden indem folgende Schritte durchgeführt werden:
+### Installation Browser und unclutter
 ```
 $ sudo apt update
 $ sudo apt install chromium-browser
 $ sudo apt install unclutter
 ```
-#### Einrichtung Systemd-Service
+### Einrichtung Systemd-Service
 Die Datei *"chromium-dashboard.service"* muss unter `/etc/systemd/system` abgelegt werden.  
 Eine neue Datei anlegen unter `/home/pi/dvc` namens *"trigger"*  
 ```
@@ -42,7 +42,7 @@ $ systemctl enable chromium-dashboard.service --now
 $ systemctl enable trigger-mon.path --now
 $ systemctl enable trigger-mon.service --now
 ```
-#### Scripte einrichten
+### Scripte einrichten
 Das Script *"chromium-autostart.sh"* wird unter `/opt/dvc/` abgelegt.  
 Das Script *"trigger.sh"* wird unter `/opt/dvc/` abgelegt.  
 Damit das Script *"chromium-autostart.sh"* durch jeden gestartet werden kann, muss noch die Berechtigung angepasst werden:  
