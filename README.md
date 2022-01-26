@@ -1,5 +1,5 @@
 # DashboardViewController
-welche Webseite er im Kiosk Modus auf dem Bildschirm ausgeben soll. Zusätzlich ist es möglich den Raspberry Pi herunterzufahren bzw. neu zu starten.
+Der DashbordViewController ist dafür gedacht einen Raspberry Pi mitzuteilen welche Webseite er im Kiosk Modus auf dem Bildschirm ausgeben soll. Zusätzlich ist es möglich den Raspberry Pi herunterzufahren bzw. neu zu starten.
 
 In der Weboberfläche ist es möglich Gruppen und Benutzer anzulegen. Der Benutzer kann die zuvor genannten Tätigkeiten bei den Raspberry Pis die seiner Gruppe zugeordnet sind durchführen.
 
