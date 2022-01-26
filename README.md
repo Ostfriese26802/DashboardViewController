@@ -8,12 +8,17 @@ Neue Raspberry Pis bzw. Anpassung bestehender können nur durch Mitglieder der A
 
 #### Installation
 Zunächst das Repository auschecken
+
 bundle install
+
 yarn install --check-files
 
 Im Anschluss die Datenbank anlegen
+
 rake db:create
+
 rake db:migrate
+
 rake db:seed (Anlegen des admin Benutzers mit dem Kennwort admin)
 
 
