@@ -20,8 +20,8 @@
         <td><%= computer.fqdn %></td>
          <td><%= computer.benutzer %></td>
         <td><%= computer.url %></td>
-        <td><%= Gruppe.find(computer.gruppe_id).name %></td>
-        <td><%= computer.standort %></td>
+        <td width="200"><%= Gruppe.find(computer.gruppe_id).name %></td>
+        <td width="350"><%= computer.standort %></td>
         <td>
             <%= link_to '<i class="bi bi-eye" style="color:#000000;font-size:20pt" ></i>'.html_safe ,:controller => "computers", :action => "show", :id => computer.id %>
         </td>
@@ -29,8 +29,9 @@
             <%= link_to '<i class="bi bi-gear" style="color:#000000;font-size:20pt" ></i>'.html_safe ,:controller => "computers", :action => "edit", :id => computer.id %>
         </td>
         <td>
+          <% if session[:gruppe_id] == 1%>
             <%= link_to '<i class="bi bi-trash" style="color:#000000;font-size:20pt" ></i>'.html_safe ,computer, method: :delete, data: { confirm: 'Sind Sie sicher?' } %>
-        
+          <% end %>
           
         </td>
         <td><%= link_to '<i class="bi bi-arrow-bar-up" style="color:#000000;font-size:20pt" ></i>'.html_safe ,:controller => "computers", :action => "url", :id => computer.id %></td>
@@ -42,5 +43,6 @@
 </table>
 
 <br>
-
-<%= link_to 'Neuer Computer', new_computer_path %>
+<% if session[:gruppe_id] == 1%>
+  <%= link_to 'Neuer Computer', new_computer_path %>
+<% end %>

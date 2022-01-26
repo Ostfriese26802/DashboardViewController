@@ -29,14 +29,14 @@
 	text-align: center;
 }
 .btn-primary {
-        color: white;
-        border-color: white;
+        color: grey;
+        border-color: black;
         margin-bottom: 5px;
 }
 
 #content{
-        width: 50%;
-        border: 1px solid #ff0000;
+        width: 60%;
+        border: 0px solid #ff0000;
         position: absolute;
         left:25%;
         top: 0px;
