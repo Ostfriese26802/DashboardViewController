@@ -19,3 +19,7 @@ rake db:seed (Anlegen des admin Benutzers mit dem Kennwort admin)
 
 #### Auf dem Raspberry PI
 Für das starten des Browser im Kiosk Modus inklusive öffnen der hinterlegten URL gibt es im git Repository die entsprechenden Scripte. Gleichzeitig gibt es ein Script das unter dem Root Benutzer ausgeführt muss. Es prüft eine Steuerdatei und startet den Pi neu oder fährt ihn herunter.
+
+
+##### Beispielbild
+![Computerverwaltung](http://www.itbasic.de/wp-content/uploads/2022/01/dvc.png)
