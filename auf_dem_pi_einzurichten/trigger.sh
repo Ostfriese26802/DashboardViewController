@@ -11,6 +11,7 @@ if [ -f $file ]; then
   case $content in
     reboot   ) logger -t DVC -p info "Reboot durch DVC getriggert!" && shutdown -r now;;
     shutdown ) logger -t DVC -p info "Shutdown durch DVC getriggert!" && shutdown now;;
+    update   ) logger -t DVC -p info "Update durch DVC getriggert!" && apt update && apt upgrade -y && shutdown -r now;;
   esac
 else
   echo "Datei" $file "nicht vorhanden!"
