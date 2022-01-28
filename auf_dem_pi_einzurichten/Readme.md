@@ -8,7 +8,7 @@ Der erste Service startet direkt nach Start des System und daraufhin ein Script,
  - Chromium wird im Kioskmodus mit zugehöriger URL aufgerufen
 
 Der zweite Service überwacht die Datei `/home/pi/dvc/trigger`. Sobald diese Datei verändert wird, wird das Script *"trigger.sh"* gestartet.  
-Das Script prüft ob reboot oder shutdown eingetragen wurden durch das DVC und startet das System neu, bzw. fährt dieses herunter.  
+Das Script prüft ob reboot, shutdown oder update eingetragen wurde durch das DVC und startet das System neu, fährt dieses herunter, bzw. startet ein update mit anschließendem Neustart.  
 
 ## Voraussetzung
 Installiert werden müssen Chromium-browser, sowie unclutter (um den Mauszeiger zu deaktivieren)
