@@ -11,11 +11,11 @@ Der zweite Service überwacht die Datei `/home/pi/dvc/trigger`. Sobald diese Dat
 Das Script prüft ob reboot, shutdown oder update eingetragen wurde durch das DVC und startet das System neu, fährt dieses herunter, bzw. startet ein update mit anschließendem Neustart.  
 
 ## Voraussetzung
-Installiert werden müssen Chromium-browser, sowie unclutter (um den Mauszeiger zu deaktivieren)
+Installiert werden müssen Chromium-browser, sowie unclutter (um den Mauszeiger zu deaktivieren).
 
 ## Installation/ Einrichtung
 Für die Installation muss der Inhalt des gesamten Verzeichnisses auf den Pi kopiert werden.  
-Anschließend kann innerhalb dieses Verzeichnisses der installer aufgerufen werden.
+Anschließend kann innerhalb dieses Verzeichnisses der **installer** aufgerufen werden.
 ```
 $ sudo ./install.sh
 ```
