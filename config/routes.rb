@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :users
   resources :start
   
+  get 'start/info', to: 'start#info'
+
   get 'sessions/new'
   get 'sessions/create'
   get 'sessions/login'
