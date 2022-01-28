@@ -61,12 +61,12 @@ class ComputersController < ApplicationController
   def url
     Net::SSH.start(Computer.find(params[:id]).fqdn, Computer.find(params[:id]).benutzer) do |ssh|
       output = ssh.exec!("echo '" + Computer.find(params[:id]).url + "' > urldatei.txt")
-      
 
-     
-      
+
+
+
     end
-    
+
    respond_to do |format|
      format.html { redirect_to computers_url ,notice: 'Url übertragen' }
      format.json { render :show, status: :ok, location: @computer }
@@ -75,16 +75,16 @@ class ComputersController < ApplicationController
 
   # computer neu starten
   def neustart
-    
+
     Net::SSH.start(Computer.find(params[:id]).fqdn, Computer.find(params[:id]).benutzer) do |ssh|
       output = ssh.exec!("echo 'reboot' > dvc/trigger")
-      
+
       # Prüfen ob der Steuerbefehl auch übertragen wurde
       checkoutput = ssh.exec!("cat dvc/trigger")
 
 
-         
-      if checkoutput.include? "reboot" 
+
+      if checkoutput.include? "reboot"
         respond_to do |format|
         format.html { redirect_to computers_url ,notice: 'Computer wird neugestartet' }
         format.json { render :show, status: :ok, location: @computer }
@@ -95,23 +95,23 @@ class ComputersController < ApplicationController
           format.json { render :show, status: :ok, location: @computer }
           end
       end
-     
-     
+
+
     end
-    
-   
+
+
   end
 
-  # computer herunterfhren
+  # computer herunterfahren
   def herunterfahren
-    
+
     Net::SSH.start(Computer.find(params[:id]).fqdn, Computer.find(params[:id]).benutzer) do |ssh|
       output = ssh.exec!("echo 'shutdown' > dvc/trigger")
-      
+
        # Prüfen ob der Steuerbefehl auch übertragen wurde
        checkoutput = ssh.exec!("cat dvc/trigger")
-      
-       if checkoutput.include? "shutdown" 
+
+       if checkoutput.include? "shutdown"
         respond_to do |format|
         format.html { redirect_to computers_url ,notice: 'Computer wird heruntergefahren' }
         format.json { render :show, status: :ok, location: @computer }
@@ -122,13 +122,40 @@ class ComputersController < ApplicationController
           format.json { render :show, status: :ok, location: @computer }
           end
       end
-     
-     
+
+
     end
-    
-   
+
+
   end
-  
+
+  # computer updaten
+  def updaten
+
+    Net::SSH.start(Computer.find(params[:id]).fqdn, Computer.find(params[:id]).benutzer) do |ssh|
+      output = ssh.exec!("echo 'update' > dvc/trigger")
+
+       # Prüfen ob der Steuerbefehl auch übertragen wurde
+       checkoutput = ssh.exec!("cat dvc/trigger")
+
+       if checkoutput.include? "update"
+        respond_to do |format|
+        format.html { redirect_to computers_url ,notice: 'Computer wird mit Updates versorgt' }
+        format.json { render :show, status: :ok, location: @computer }
+        end
+      else
+        respond_to do |format|
+          format.html { redirect_to computers_url ,notice: 'Es ist ein Fehler aufgetreten, bitte client prüfen' }
+          format.json { render :show, status: :ok, location: @computer }
+          end
+      end
+
+
+    end
+
+
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_computer

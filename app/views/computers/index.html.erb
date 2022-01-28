@@ -32,11 +32,12 @@
           <% if session[:gruppe_id] == 1%>
             <%= link_to '<i class="bi bi-trash" style="color:#000000;font-size:20pt" ></i>'.html_safe ,computer, method: :delete, data: { confirm: 'Sind Sie sicher?' } %>
           <% end %>
-          
+
         </td>
         <td><%= link_to '<i class="bi bi-arrow-bar-up" style="color:#000000;font-size:20pt" ></i>'.html_safe ,:controller => "computers", :action => "url", :id => computer.id %></td>
         <td><%= link_to '<i class="bi bi-arrow-clockwise" style="color:#000000;font-size:20pt" ></i>'.html_safe ,:controller => "computers", :action => "neustart", :id => computer.id %></td>
         <td><%= link_to '<i class="bi bi-power" style="color:#000000;font-size:20pt" ></i>'.html_safe ,:controller => "computers", :action => "herunterfahren", :id => computer.id %></td>
+        <td><%= link_to '<i class="bi bi-arrow-up-circle" style="color:#000000;font-size:20pt" ></i>'.html_safe ,:controller => "computers", :action => "updaten", :id => computer.id %></td>
       </tr>
     <% end %>
   </tbody>
